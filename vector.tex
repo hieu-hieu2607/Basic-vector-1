@@ -1,0 +1,122 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{vietnamese}
+\setmainfont{Times New Roman}
+
+\title{University Math Fundamentals in Physics}
+\author{Author: Hoang Minh Hieu}
+\date{Hanoi, September 2026}
+
+\begin{document}
+
+\section{Vector}
+\subsection{Định nghĩa}
+\textbf{Vector} có thể hiểu là 1 đoạn thẳng có hướng, đi từ điểm A đến điểm B hoặc từ B đến A, hướng khi đi từ A đến B sẽ ngược lại hướng từ B đến A.\newline
+Cho 2 điểm A = ($a_1, a_2,a_3$) và B = ($b_1,b_2,b_3$), \textbf{vector} nối 2 điểm AB sẽ được thể hiện như sau: 
+\[\vec{AB}=(b_1-a_1, b_2-a_2,b_3-a_3)\]
+Ví dụ: 
+\begin{center}
+     Cho A = (1, 2, 3), B = (4, 5, 6), $\vec{AB}$ = (4-1, 5-2, 6-3) = (3, 3, 3)
+\end{center}
+\underline{\textbf{Vector} đơn vị} là các \textbf{vector} có độ dài là 1, đi theo các hướng Ox, Oy, Oz. Với $\hat{i}$ = (1,0,0); $\hat{j}$ = (0,1,0); $\hat{k}$ = (0,0,1).
+
+\subsection{Nhân 1 số với \textbf{vector}}
+Khi ta nhân 1 số thực với 1 \textbf{vector}, ta đang kéo giản \textbf{vector} đó với số lần số thực đó. Có thể hiểu là giá trị của số thực đó là bội số của độ dài \textbf{vector} đó. \newline
+Ví dụ: \newline
+2$\cdot\vec{a}$: Kéo dài \textbf{vector} a ra 2 lần\newline
+1/2$\cdot\vec{b}$: Kéo dài \textbf{vecotr} b còn 1/2 lần (hay còn gọi là nén)\newline
+-1$\cdot\vec{c}$: Dấu trừ sẽ đảo chiều \textbf{vector}, nếu không có thêm bội số thì sẽ không làm thay đổi chiều dài \textbf{vector}
+
+\subsection{Cộng, trừ 2 vector}
+Khi cộng 2 \textbf{vector} ta cộng lại các toạ độ x, y, z của 2 \textbf{vector} mà ta tính.\newline
+Ví dụ: 
+\[\vec{a}=(1,5,-3),\vec{b}=(-2,-4,5),\vec{a}+\vec{b}=(1-2,5-4,-3+5)=(-1,1,2)\]
+Khi trừ 2 \textbf{vector} ta làm tương tự với phép cộng nhưng thay bằng dấu trừ.\newline
+Ví dụ: 
+\[\vec{c}=(2,3,5),\vec{d}=(5,-1,-3, \vec{c}-\vec{d}=(2-5,3-(-1),5-(-3))=(-3,4,8)\]
+
+\subsection{Tích vô hướng, có hướng}
+Đối với tích vô hướng giữa 2 \textbf{vector}, ta nhân từng phần tử x, y, z tương ứng của chúng lại với nhau và cộng tổng tất cả lại, kết quả sẽ là 1 vô hướng (1 số thực).\newline
+Ví dụ: 
+\[\vec{a}=(0,3,7), \vec{b}=(1,3, 1/2),\vec{a}\cdot\vec{b}=0\cdot1+3\cdot3+7\cdot1/2=25/2\]
+Khi tính tích có hướng, ta tính định thức của 1 ma trận 3$\times$3 với 2 \textbf{vector} được đặt theo hàng ngang và ở hàng thứ nhất sẽ là các \textbf{vector} đơn vị $\hat{i}$, $\hat{j}$, $\hat{k}$.
+Cho 2 \textbf{vector} $\vec{a}=(a_1, b_1, c_1)$ và $\vec{b}=(a_2, b_2, c_2)$: 
+\[\vec{a}\times\vec{b}= \begin{vmatrix}
+    \hat{i}&\hat{j}&\hat{k}\\
+    a_1&b_1&c_1\\
+    a_2&b_2&c_2
+\end{vmatrix}=\hat{i}\cdot\begin{vmatrix}
+    b_1&c_1\\
+    b_2&c_2
+\end{vmatrix}-\hat{j}\cdot\begin{vmatrix}
+    a_1&c_1\\
+    a_2&c_2
+\end{vmatrix}+\hat{k}\cdot\begin{vmatrix}
+    a_1&b_1\\
+    a_2&b_2
+\end{vmatrix}\]
+
+\section{Giải tích vector}
+\subsection{Hàm vector}
+1 hàm \textbf{vector} được định nghĩa là: 
+\[\vec{F} = \langle P, Q, R \rangle=\hat{i}\cdot P+\hat{j}\cdot Q+\hat{k}\cdot R\]
+Với P, Q, R là các hàm số riêng biệt.
+
+\subsection{Giới hạn của hàm vector}
+Giới hạn của hàm \textbf{vector} là giới hạn của từng hàm bên trong hàm \textbf{vector} đó.
+\[\lim_{x \to a}\vec{F}= \langle \lim_{x \to a}P, \lim_{x \to a}Q,\lim_{x \to a}R \rangle\]
+Ví dụ: 
+Tính giới hạn của $\vec{F} = \langle 2x^2, ln(3x), \frac{1}{2} \rangle$ khi x tiến tới $\infty$.
+\[lim_{x \to \infty}\vec{F}=\langle lim_{x \to \infty}2x^2, lim_{x \to \infty}ln(3x), lim_{x \to \infty}1/2 \rangle\]
+\[lim_{x \to \infty}\vec{F} = \langle \infty, \infty, \frac{1}{2} \rangle\]
+
+\subsection{Đạo hàm của hàm vector}
+Đạo hàm của hàm \textbf{vector} là đạo hàm của từng hàm bên trong hàm \textbf{vector} đó.
+\[\frac{d \vec{F}}{dx}=\langle \frac{dP}{dx}, \frac{dQ}{dx}, \frac{dR}{dx} \rangle\]
+Ví dụ: Tính đạo hàm của $\vec{F} = \langle 2x^2, ln(3x), \frac{1}{2} \rangle$.
+\[\frac{d \vec{F}}{dx}=\langle \frac{d}{dx}2x^2, \frac{d}{dx}ln(3x), \frac{d}{dx}\frac{1}{2} \rangle\]
+\[\frac{d \vec{F}}{dx}=\langle 4x, \frac{1}{x}, 0 \rangle\]
+
+\subsection{Nguyên hàm của hàm vector}
+Nguyên hàm của hàm \textbf{vector} là nguyên hàm của từng hàm bên trong hàm \textbf{vector} đó.
+\[\int \vec{F}dx = \langle \int Pdx, \int Qdx,\int Rdx\rangle\]
+Ví dụ: Tính nguyên hàm của $\vec{F} = \langle 4x, \frac{1}{x}, -sinx \rangle$.
+\[\int \vec{F}dx = \langle \int 4xdx, \int \frac{1}{x}dx,\int -sinxdx\rangle\]
+\[\int \vec{F}dx = \langle 2x^2, ln(x), cosx \rangle\]
+
+\subsection{Đạo hàm riêng}
+Đạo hàm riêng là đạo hàm theo 1 biến của hàm số nhiều biến. Ký hiệu là $\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}$. Đạo hàm theo x hoặc y thì sẽ coi toàn bộ tất cả biến còn lại như là 1 hằng số.
+\begin{center}
+    Cho f(x) = 2xy + 2x$y^2$ -3, $\frac{\partial f}{\partial x} = 2y + 2y^2, \frac{\partial f}{\partial y}=2x+4xy$.
+\end{center}
+Đạo hàm riêng là 1 mắt chốt trong Divergence và Curl(hay còn gọi là Rot).
+
+\subsection{Gradient ($\nabla$)}
+Gradient (hoặc Nabla) được định nghĩa như sau: 
+\[\nabla = \hat{i}\cdot\frac{\partial}{\partial x}+\hat{j}\cdot\frac{\partial}{\partial y}+\hat{k}\cdot\frac{\partial}{\partial z}\]
+Tích vô hướng giữa Gradient và hàm \textbf{vector}, được gọi là \textbf{Divergence}: 
+\[\nabla\cdot \vec{F} = (\frac{\partial}{\partial x} + \frac{\partial}{\partial y} + \frac{\partial}{\partial z})\cdot\begin{pmatrix}
+    P\\Q\\R
+\end{pmatrix}=\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}\]
+Kết quả của phép tích vô hướng giữa Gradient và hàm \textbf{vector} sẽ là 1 số thực.\newline
+Tích có hướng giữa Gradient và hàm \textbf{vector}, được gọi là \textbf{Curl} hoặc \textbf{Rot}: 
+\[\nabla \times \vec{F}=\begin{vmatrix}
+    \hat{i}&\hat{j}&\hat{k}\\
+    \frac{\partial}{\partial x}&\frac{\partial}{\partial y}&\frac{\partial}{\partial z}\\
+    P&Q&R
+\end{vmatrix}=\hat{i}\cdot\begin{vmatrix}
+    \frac{\partial}{\partial y}&\frac{\partial}{\partial z}\\
+    Q&R
+\end{vmatrix}-\hat{j}\cdot\begin{vmatrix}
+    \frac{\partial}{\partial x}& \frac{\partial}{\partial z}\\
+    P&R
+\end{vmatrix}+\hat{k}\cdot\begin{vmatrix}
+    \frac{\partial}{\partial x}&\frac{\partial}{\partial y}\\
+    P&Q
+\end{vmatrix}\]
+Kết quả của phép tích có hướng giữa Gradient và hàm \textbf{vector} sẽ là 1 \textbf{}{vector}.
+
+\end{document}
